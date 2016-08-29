@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <meta name="description" content="{{ basic.html_description }}">
+    <title>{{ basic.html_title }}</title>
+    <link rel="shortcut icon" href="{{ basic.html_favicon }}">
+    <meta name="keywords" content="{{ basic.html_keywords }}">
+    <meta name="author" content="{{ basic.name }}">
+{% endblock %}
+
+{% block custom_css %}
+    body::before {
+        background-image: url("{{ basic.cover.url }}");
+    }
+{% endblock %}
+
+{% block grid_content %}
+    <div class="mdl-card shopping mdl-cell mdl-cell--12-col">
+        <div class="mdl-card__media mdl-color-text--grey-50"
+            style="background-image: url('{{ basic.profile.url }}'); height: 280px;">
+            <h3><a href="#">{{ basic.name }}</a></h3>
+        </div>
+        <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+            {{  basic.introduction }}
+        </div>
+    </div>
+
+    {% for item in categories %}
+        {% if item.span <= 1 %}
+            <div class="mdl-card shopping mdl-cell mdl-cell--4-col">
+        {% elif item.span == 2 %}
+            <div class="mdl-card shopping mdl-cell mdl-cell--8-col">
+        {% else %}
+            <div class="mdl-card shopping mdl-cell mdl-cell--12-col">
+        {% endif %}
+
+        <div class="mdl-card__media mdl-color-text--grey-50"
+            style="background-image: url('{{ item.image.url }}'); height: 280px;">
+            <h3><a href="#">{{ item.title }}</a></h3>
+        </div>
+        <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+            {{  item.description }}
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}
