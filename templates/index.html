@@ -4,25 +4,25 @@
 {% block head %}
     <meta name="description" content="{{ basic.html_description }}">
     <title>{{ basic.html_title }}</title>
-    <link rel="shortcut icon" href="{{ basic.html_favicon }}">
+    <link rel="shortcut icon" href="{{ basic.html_favicon.url }}">
     <meta name="keywords" content="{{ basic.html_keywords }}">
     <meta name="author" content="{{ basic.name }}">
 {% endblock %}
 
 {% block custom_css %}
     body::before {
-        background-image: url("{{ basic.cover.url }}");
+    background-image: url("{{ basic.cover.url }}");
     }
 {% endblock %}
 
 {% block grid_content %}
     <div class="mdl-card shopping mdl-cell mdl-cell--12-col">
         <div class="mdl-card__media mdl-color-text--grey-50"
-            style="background-image: url('{{ basic.profile.url }}'); height: 280px;">
+             style="background-image: url('{{ basic.profile.url }}'); height: 280px;">
             <h3><a href="#">{{ basic.name }}</a></h3>
         </div>
         <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-            {{  basic.introduction }}
+            {{ basic.introduction }}
         </div>
     </div>
 
@@ -35,13 +35,33 @@
             <div class="mdl-card shopping mdl-cell mdl-cell--12-col">
         {% endif %}
 
-        <div class="mdl-card__media mdl-color-text--grey-50"
-            style="background-image: url('{{ item.image.url }}'); height: 280px;">
-            <h3><a href="#">{{ item.title }}</a></h3>
-        </div>
-        <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-            {{  item.description }}
-        </div>
+    <div class="mdl-card__media mdl-color-text--grey-50"
+         style="background-image: url('{{ item.image.url }}'); height: 280px;">
+        <h3><a href="#">{{ item.title }}</a></h3>
+    </div>
+    <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+        {{ item.description }}
+    </div>
     </div>
     {% endfor %}
+{% endblock %}
+
+{% block footer_links %}
+    <a href="{{ basic.twitter }}" target="_blank">
+        <button class="mdl-mini-footer--social-btn social-btn social-btn__twitter">
+            <span class="visuallyhidden">Twitter</span>
+        </button>
+    </a>
+
+    <a href="{{ basic.facebook }}" target="_blank">
+        <button class="mdl-mini-footer--social-btn social-btn social-btn__blogger">
+            <span class="visuallyhidden">Facebook</span>
+        </button>
+    </a>
+
+    <a href="{{ basic.google }}" target="_blank">
+        <button class="mdl-mini-footer--social-btn social-btn social-btn__gplus">
+            <span class="visuallyhidden">Google Plus</span>
+        </button>
+    </a>
 {% endblock %}
