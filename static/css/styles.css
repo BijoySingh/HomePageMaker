@@ -12,7 +12,12 @@ body::before {
 }
 
 body .demo-blog {
-    font-family: 'Roboto', 'Helvetica', sans-serif;
+    font-family: 'Raleway', 'Roboto', 'Helvetica', sans-serif;
+}
+
+.demo-blog .mdl-card__supporting-text a {
+    text-decoration: none;
+    color: #dd1338;
 }
 
 .demo-blog .demo-blog__posts {
@@ -26,6 +31,11 @@ body .demo-blog {
     -webkit-flex-shrink: 0;
     -ms-flex-negative: 0;
     flex-shrink: 0;
+}
+
+.card-content {
+    font-size: 1.4em!important;
+    padding: 32px!important;
 }
 
 .demo-blog.mdl-layout .mdl-layout__content {
@@ -79,7 +89,7 @@ body .demo-blog {
 }
 
 .demo-blog .mdl-card__supporting-text {
-    padding: 32px;
+    padding: 16px;
     min-height: 64px;
 }
 

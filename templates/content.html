@@ -21,7 +21,7 @@
              style="background-image: url('{{ category.image.url }}'); height: 280px;">
             <h3><a href="#">{{ category.title }}</a></h3>
         </div>
-        <div class="mdl-card__supporting-text mdl-color-text--grey-600" style="margin-bottom: 20px;">
+        <div class="mdl-card__supporting-text mdl-color-text--grey-600 card-content" style="margin-bottom: 20px;">
             {% autoescape off %}
             {{ category.description }}
             {% endautoescape %}
@@ -42,7 +42,7 @@
                 <span>{{ item.modified_at }}</span>
               </div>
             </div>
-            <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
+            <div class="mdl-color-text--grey-700 mdl-card__supporting-text card-content">
                 {% autoescape off %}
                 {{ item.description }}
                 {% endautoescape %}
