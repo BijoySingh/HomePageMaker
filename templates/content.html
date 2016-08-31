@@ -22,7 +22,10 @@
             <h3><a href="#">{{ category.title }}</a></h3>
         </div>
         <div class="mdl-card__supporting-text mdl-color-text--grey-600" style="margin-bottom: 20px;">
+            {% autoescape off %}
             {{ category.description }}
+            {% endautoescape %}
+
         </div>
     </div>
 
@@ -40,10 +43,10 @@
               </div>
             </div>
             <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
-              {{ item.description }}
+                {% autoescape off %}
+                {{ item.description }}
+                {% endautoescape %}
             </div>
-            <div class="mdl-color-text--primary-contrast mdl-card__supporting-text comments">
-          </div>
         </div>
     {% endfor %}
 {% endblock %}

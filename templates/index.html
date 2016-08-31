@@ -22,7 +22,9 @@
             <h3><a href="#">{{ basic.name }}</a></h3>
         </div>
         <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+            {% autoescape off %}
             {{ basic.introduction }}
+            {% endautoescape %}
         </div>
     </div>
 
@@ -40,7 +42,9 @@
         <h3><a href="/category/{{ item.id }}/">{{ item.title }}</a></h3>
     </div>
     <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+        {% autoescape off %}
         {{ item.description }}
+        {% endautoescape %}
     </div>
     </div>
     {% endfor %}
