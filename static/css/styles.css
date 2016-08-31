@@ -79,15 +79,8 @@ body .demo-blog {
 }
 
 .demo-blog .mdl-card__supporting-text {
-    width: 100%;
-    padding: 16px;
+    padding: 32px;
     min-height: 64px;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
 }
 
 .demo-blog .mdl-card__supporting-text strong {
