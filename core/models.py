@@ -26,6 +26,7 @@ class Category(models.Model):
     image = models.ImageField(blank=True, null=True)
     position = models.IntegerField(unique=True, default=0)
     span = models.IntegerField(default=3)
+    direct_link = models.CharField(default="", null=True, blank=True, max_length=256)
 
     def __str__(self):
         return "[" + str(self.id) + "] " + self.title
