@@ -41,7 +41,7 @@
          style="background-image: url('{{ item.image.url }}'); height: 280px;">
 
         {% if item.direct_link and item.direct_link != '' %}
-            <h3><a href="{{ item.direct_link }}">{{ item.title }}</a></h3>
+            <h3><a href="{{ item.direct_link }}" target="_blank">{{ item.title }}</a></h3>
         {% else %}
             <h3><a href="/category/{{ item.id }}/">{{ item.title }}</a></h3>
         {% endif %}
