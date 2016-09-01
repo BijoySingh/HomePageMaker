@@ -38,6 +38,10 @@ body .demo-blog {
     padding: 32px!important;
 }
 
+.card-content h5 {
+    font-size: 0.8em!important;
+}
+
 .demo-blog.mdl-layout .mdl-layout__content {
     padding-top: 230px;
     position: relative;
