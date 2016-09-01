@@ -16,6 +16,15 @@
 {% endblock %}
 
 {% block grid_content %}
+    <nav class="demo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+        <a href="{{ request.scheme  }}://{{ request.get_host }}" class="demo-nav__button">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            Home
+        </a>
+    </nav>
+
     <div class="mdl-card shopping mdl-cell mdl-cell--12-col">
         <div class="mdl-card__media mdl-color-text--grey-50"
              style="background-image: url('{{ category.image.url }}'); height: 280px;">
@@ -23,7 +32,7 @@
         </div>
         <div class="mdl-card__supporting-text mdl-color-text--grey-600 card-content" style="margin-bottom: 20px;">
             {% autoescape off %}
-            {{ category.description }}
+                {{ category.description }}
             {% endautoescape %}
 
         </div>
@@ -32,24 +41,24 @@
     {% for item in contents %}
         <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
             <div class="mdl-card__media mdl-color-text--grey-50"
-                 {% if item.cover and item.cover.url %}
-                    style="background-image: url('{{ item.cover.url }}'); height: 180px;"
-                 {% else %}
-                    style="height: 120px;"
-                 {% endif %}
-             >
-              <h3>{{ item.title }}</h3>
+                    {% if item.cover and item.cover.url %}
+                 style="background-image: url('{{ item.cover.url }}'); height: 180px;"
+                    {% else %}
+                 style="height: 120px;"
+                    {% endif %}
+            >
+                <h3>{{ item.title }}</h3>
             </div>
             <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-              <div class="minilogo" style="background-image: url('{{ basic.profile.url }}');"></div>
-              <div>
-                <strong>{{ basic.name }}</strong>
-                <span>{{ item.modified_at }}</span>
-              </div>
+                <div class="minilogo" style="background-image: url('{{ basic.profile.url }}');"></div>
+                <div>
+                    <strong>{{ basic.name }}</strong>
+                    <span>{{ item.modified_at }}</span>
+                </div>
             </div>
             <div class="mdl-color-text--grey-700 mdl-card__supporting-text card-content">
                 {% autoescape off %}
-                {{ item.description }}
+                    {{ item.description }}
                 {% endautoescape %}
             </div>
         </div>
