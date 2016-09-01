@@ -38,12 +38,12 @@ body .demo-blog {
     padding: 32px!important;
 }
 
-.card-content h5, .card-content h3{
+.card-content h5, .card-content h3, .card-content h4, .card-content h2{
     font-size: 0.8em!important;
 }
 
-.card-content pre, .card-content code, .card-content em, .card-content strong {
-    font-size: 13px;
+.card-content pre, .card-content code, .card-content em, .card-content strong, .card-content b {
+    font-size: 13px!important;
 }
 
 .demo-blog.mdl-layout .mdl-layout__content {
