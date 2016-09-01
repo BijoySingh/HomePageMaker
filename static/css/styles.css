@@ -42,7 +42,7 @@ body .demo-blog {
     font-size: 0.8em!important;
 }
 
-.card-content pre, .card-content code, .card-content em {
+.card-content pre, .card-content code, .card-content em, .card-content strong {
     font-size: 13px;
 }
 
