@@ -41,7 +41,9 @@
     {% for item in contents %}
         <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
             <div class="mdl-card__media mdl-color-text--grey-50"
-                    {% if item.cover and item.cover.url %}
+                    {% if item.cover and item.cover.url and item.gallery_object %}
+                 style="background-image: url('{{ item.cover.url }}'); height: 360px;"
+                    {% elif item.cover and item.cover.url %}
                  style="background-image: url('{{ item.cover.url }}'); height: 180px;"
                     {% else %}
                  style="height: 120px;"
