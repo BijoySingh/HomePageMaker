@@ -66,15 +66,17 @@
         </div>
     {% endfor %}
 
-    <div class="mdl-card shopping mdl-cell mdl-cell--12-col">
-        <div class="mdl-card__media mdl-color-text--grey-50"
-             style="height: 120px;">
-            <h3><a href="#">Comments</a></h3>
+    {% if basic.discus_domain and basic.discus_domain != '' %}
+        <div class="mdl-card shopping mdl-cell mdl-cell--12-col">
+            <div class="mdl-card__media mdl-color-text--grey-50"
+                 style="height: 120px;">
+                <h3><a href="#">Comments</a></h3>
+            </div>
+            <div class="mdl-card__supporting-text mdl-color-text--grey-600 card-content" style="margin-bottom: 20px;">
+                <div id="disqus_thread"></div>
+            </div>
         </div>
-        <div class="mdl-card__supporting-text mdl-color-text--grey-600 card-content" style="margin-bottom: 20px;">
-            <div id="disqus_thread"></div>
-        </div>
-    </div>
+    {% endif %}
 
 {% endblock %}
 
@@ -99,19 +101,21 @@
 {% endblock %}
 
 {% block js %}
-    <script id="dsq-count-scr" src="//bijoysingh-com.disqus.com/count.js" async></script>
-    <script>
-        var disqus_config = function () {
-            this.page.url = "{{ request.scheme  }}://{{ request.get_host }}{{ request.path }}";
-            this.page.identifier = "category_{{ category.id }}";
-        };
-        (function () {
-            var d = document, s = d.createElement('script');
-            s.src = '//bijoysingh-com.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
-        Disqus.</a></noscript>
+    {% if basic.discus_domain and basic.discus_domain != '' %}
+        <script id="dsq-count-scr" src="//{{ basic.discus_domain }}.disqus.com/count.js" async></script>
+        <script>
+            var disqus_config = function () {
+                this.page.url = "{{ request.scheme  }}://{{ request.get_host }}{{ request.path }}";
+                this.page.identifier = "category_{{ category.id }}";
+            };
+            (function () {
+                var d = document, s = d.createElement('script');
+                s.src = '//{{ basic.discus_domain }}.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+    {% endif %}
 {% endblock %}

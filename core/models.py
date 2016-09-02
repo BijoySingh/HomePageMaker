@@ -16,6 +16,7 @@ class BasicItem(models.Model):
     html_keywords = models.TextField(default="")
     html_description = models.TextField(default="")
     html_title = models.TextField(default="")
+    discus_domain = models.TextField(default="")
 
 
 # Category
