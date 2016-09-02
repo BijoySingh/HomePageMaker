@@ -7,11 +7,12 @@
     <link rel="shortcut icon" href="{{ basic.html_favicon.url }}">
     <meta name="keywords" content="{{ basic.html_keywords }}">
     <meta name="author" content="{{ basic.name }}">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.{{ basic.primary_color }}-{{ basic.accent_color }}.min.css">
 {% endblock %}
 
 {% block custom_css %}
     body::before {
-    background-image: url("{{ basic.cover.url }}");
+        background-image: url("{{ basic.cover.url }}");
     }
 
     .demo-blog .mdl-card__supporting-text a {
