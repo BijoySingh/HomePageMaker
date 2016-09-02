@@ -13,6 +13,11 @@
     body::before {
     background-image: url("{{ basic.cover.url }}");
     }
+
+    .demo-blog .mdl-card__supporting-text a {
+        text-decoration: none;
+        color: {{ basic.theme_color }};
+    }
 {% endblock %}
 
 {% block grid_content %}

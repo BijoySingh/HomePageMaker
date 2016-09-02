@@ -15,11 +15,6 @@ body .demo-blog {
     font-family: 'Raleway', 'Roboto', 'Helvetica', sans-serif;
 }
 
-.demo-blog .mdl-card__supporting-text a {
-    text-decoration: none;
-    color: #dd1338;
-}
-
 .demo-blog .demo-blog__posts {
     max-width: 900px;
     padding: 0;

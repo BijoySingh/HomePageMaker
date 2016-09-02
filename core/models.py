@@ -3,6 +3,12 @@ from django.db import models
 
 # Basic Information
 class BasicItem(models.Model):
+    ACCENT_COLORS = [("cyan","cyan"), ("light_blue","light_blue"), ("blue","blue"), ("indigo","indigo"),
+                     ("deep_purple","deep_purple"), ("purple","purple"), ("pink","pink"), ("red","red"),
+                     ("deep_orange","deep_orange"), ("orange","orange"), ("amber","amber"), ("yellow","yellow"),
+                     ("lime","lime"), ("light_green","light_green"), ("green","green"), ("teal","teal")]
+    PRIMARY_COLORS = ACCENT_COLORS + [("grey","grey"), ("blue_grey","blue_grey"), ("brown","brown")]
+
     name = models.CharField(max_length=256, default="")
     introduction = models.TextField(default="")
     profile = models.ImageField(null=True, blank=True)
@@ -16,7 +22,10 @@ class BasicItem(models.Model):
     html_keywords = models.TextField(default="")
     html_description = models.TextField(default="")
     html_title = models.TextField(default="")
-    discus_domain = models.TextField(default="")
+    discus_domain = models.CharField(default="", max_length=256)
+    primary_color = models.CharField(choices=PRIMARY_COLORS, max_length=20, default="red")
+    accent_color = models.CharField(choices=ACCENT_COLORS, max_length=20, default="teal")
+    theme_color = models.CharField(default="#dd1338", max_length=9)
 
 
 # Category
