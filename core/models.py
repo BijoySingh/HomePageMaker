@@ -50,6 +50,7 @@ class Content(models.Model):
     modified_at = models.DateTimeField(auto_now=True, auto_created=True)
     cover = models.ImageField(blank=True, null=True)
     gallery_object = models.BooleanField(default=False)
+    position = models.IntegerField(default=0)
 
     def __str__(self):
         return "[" + str(self.category.id) + "][" + str(self.id) + "] " + self.title

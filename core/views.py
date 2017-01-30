@@ -24,7 +24,7 @@ def view_category(request, id):
     basic = BasicItem.objects.first()
     basic.introduction = markdown.markdown(basic.introduction)
 
-    category = Category.objects.filter(id=id).first()
+    category = Category.objects.filter(id=id).order_by('position').first()
     category = get_markdown_item(category)
 
     content_items = Content.objects.filter(category=category).all()
